@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Private Driver.no</title>
+  <style>
+    /* === RESET === */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      color: #fff;
+      line-height: 1.6;
+      min-height: 100vh;
+      background: url("https://cdn.pixabay.com/photo/2017/03/27/14/56/auto-2179220_1280.jpg") no-repeat center center/cover;
+      position: relative;
+    }
+
+    /* --- Green overlay --- */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 80, 40, 0.85);
+      z-index: -1;
+    }
+
+    /* === HEADER === */
+    header {
+      background: linear-gradient(to right, #004d26, #00a859);
+      padding: 15px 0;
+      color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .container {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #fff;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after,
+    nav a.active::after {
+      width: 100%;
+    }
+
+    /* === HERO SECTION === */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(6px);
+      border-radius: 20px;
+      width: 90%;
+      margin: 50px auto;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
+
+    /* === CONTACT SECTION === */
+    .contact {
+      background: rgba(255, 255, 255, 0.15);
+      width: 90%;
+      margin: 60px auto;
+      padding: 40px 20px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .contact h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .contact p {
+      margin-bottom: 15px;
+      font-size: 1rem;
+    }
+
+    .email-link {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: #ffffff;
+      color: #006b3c;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    .email-link:hover {
+      background-color: #006b3c;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    /* === FOOTER === */
+    footer {
+      background-color: #00331b;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.95rem;
+      margin-top: 50px;
+      color: #d1d1d1;
+      border-top: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    footer p {
+      margin-top: 8px;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .socials a {
+      color: #fff;
+      font-size: 1.3rem;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      color: #00ffae;
+      transform: scale(1.1);
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 768px) {
+      header .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .contact h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Private Driver.no</h1>
+      <nav>
+        <ul>
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <h2>Welcome to Private Driver.no</h2>
+      <p>Experience premium chauffeur services across Norway.<br>
+      Reliable, comfortable, and professional — always on time.</p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <p>For bookings or inquiries, email us at:</p>
+      <a href="mailto:guestdeleteprocess@gmail.com" class="email-link">
+        guestdeleteprocess@gmail.com
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="socials">
+      <a href="#"><span>🌐</span></a>
+      <a href="#"><span>📞</span></a>
+      <a href="#"><span>✉️</span></a>
+    </div>
+    <p>© 2025 Private Driver.no | All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Active menu link highlight
+    const links = document.querySelectorAll("nav a");
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        links.forEach(l => l.classList.remove("active"));
+        link.classList.add("active");
+      });
+    });
+  </script>
+</body>
+</html>
