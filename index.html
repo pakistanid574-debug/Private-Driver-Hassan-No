@@ -183,28 +183,6 @@
       transform: scale(1.1);
     }
 
-    @media (max-width: 768px) {
-      header .container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 10px;
-      }
-
-      .hero h2 {
-        font-size: 2rem;
-      }
-
-      .contact h2 {
-        font-size: 1.5rem;
-      }
-    }
-
-    /* CLOSED MESSAGE */
     #closedMessage {
       display: none;
       background: rgba(0, 0, 0, 0.7);
@@ -216,6 +194,23 @@
       margin: 60px auto;
       width: 90%;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    /* 403 page style */
+    #forbiddenBox {
+      display: none;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    #forbiddenBox h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    #forbiddenBox p {
+      font-size: 1.3rem;
+      opacity: 0.9;
     }
   </style>
 </head>
@@ -253,6 +248,13 @@
     <p>We’re currently closed. Our working hours are 5:00 AM to 11:00 PM (Norway Time).</p>
   </div>
 
+  <!-- 403 Forbidden Page -->
+  <div id="forbiddenBox">
+    <h1>403 Forbidden</h1>
+    <p>Access to this website is currently restricted.</p>
+    <p>The owner has temporarily blocked access.</p>
+  </div>
+
   <footer>
     <div class="socials">
       <a href="#"><span>🌐</span></a>
@@ -263,43 +265,11 @@
   </footer>
 
   <script>
-    // Highlight menu links
-    const links = document.querySelectorAll("nav a");
-    links.forEach(link => {
-      link.addEventListener("click", () => {
-        links.forEach(l => l.classList.remove("active"));
-        link.classList.add("active");
-      });
-    });
-
-    // Norway time restriction
-    function checkNorwayTime() {
-      const now = new Date();
-      const options = { timeZone: 'Europe/Oslo', hour12: false, hour: '2-digit', minute: '2-digit' };
-      const timeString = new Intl.DateTimeFormat('en-GB', options).format(now);
-      const hour = parseInt(timeString.split(':')[0]);
-
-      const mainContent = document.getElementById('mainContent');
-      const closedMessage = document.getElementById('closedMessage');
-      const emailLink = document.getElementById('emailLink');
-
-      if (hour >= 5 && hour < 23) {
-        mainContent.style.display = 'block';
-        closedMessage.style.display = 'none';
-        emailLink.classList.remove('disabled');
-        emailLink.style.pointerEvents = 'auto';
-        emailLink.style.opacity = '1';
-      } else {
-        mainContent.style.display = 'none';
-        closedMessage.style.display = 'block';
-        emailLink.classList.add('disabled');
-        emailLink.style.pointerEvents = 'none';
-        emailLink.style.opacity = '0.5';
-      }
-    }
-
-    checkNorwayTime();
-    setInterval(checkNorwayTime, 60000); // check every minute
+    // 🔥 FORCE 403 FORBIDDEN MODE
+    document.getElementById("mainContent").style.display = "none";
+    document.getElementById("closedMessage").style.display = "none";
+    document.getElementById("forbiddenBox").style.display = "block";
   </script>
+
 </body>
 </html>
