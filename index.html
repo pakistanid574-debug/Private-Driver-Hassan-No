@@ -1,275 +1,293 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="google-site-verification" content="mqs9JNllYYrmpEj7YBh1NQzu8LO6x6gPJGXv8rbt-EQ" />
-  <title>Private Driver no Hassan</title>
-  <style>
-    /* === RESET === */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  <meta name="google-site-verification" content="mqs9JNllYYrmpEj7YBh1NQzu8LO6x6gPJGXv8rbt-EQ" />  
+  <title>Private Driver no Hassan</title>  
+  <style>  
+    /* === RESET === */  
+    * {  
+      margin: 0;  
+      padding: 0;  
+      box-sizing: border-box;  
+    }  html {  
+  scroll-behavior: smooth;  
+}  
 
-    html {
-      scroll-behavior: smooth;
-    }
+body {  
+  font-family: "Poppins", Arial, sans-serif;  
+  color: #fff;  
+  line-height: 1.6;  
+  min-height: 100vh;  
+  background: url("https://cdn.pixabay.com/photo/2019/09/05/07/23/village-4453338_1280.jpg") no-repeat center center/cover;  
+  position: relative;  
+}  
 
-    body {
-      font-family: "Poppins", Arial, sans-serif;
-      color: #fff;
-      line-height: 1.6;
-      min-height: 100vh;
-      background: url("https://cdn.pixabay.com/photo/2019/09/05/07/23/village-4453338_1280.jpg") no-repeat center center/cover;
-      position: relative;
-    }
+body::before {  
+  content: "";  
+  position: fixed;  
+  top: 0;  
+  left: 0;  
+  width: 100%;  
+  height: 100%;  
+  background: rgba(0, 80, 40, 0.85);  
+  z-index: -1;  
+}  
 
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 80, 40, 0.85);
-      z-index: -1;
-    }
+header {  
+  background: linear-gradient(to right, #004d26, #00a859);  
+  padding: 15px 0;  
+  color: #fff;  
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);  
+  position: sticky;  
+  top: 0;  
+  z-index: 1000;  
+}  
 
-    header {
-      background: linear-gradient(to right, #004d26, #00a859);
-      padding: 15px 0;
-      color: #fff;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+header .container {  
+  width: 90%;  
+  margin: auto;  
+  display: flex;  
+  justify-content: space-between;  
+  align-items: center;  
+}  
 
-    header .container {
-      width: 90%;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+header h1 {  
+  font-size: 1.8rem;  
+  font-weight: 700;  
+  letter-spacing: 1px;  
+}  
 
-    header h1 {
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-    }
+nav ul {  
+  list-style: none;  
+  display: flex;  
+  gap: 20px;  
+}  
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
+nav a {  
+  color: #fff;  
+  text-decoration: none;  
+  font-weight: 600;  
+  position: relative;  
+  transition: 0.3s;  
+}  
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 600;
-      position: relative;
-      transition: 0.3s;
-    }
+nav a::after {  
+  content: "";  
+  position: absolute;  
+  bottom: -4px;  
+  left: 0;  
+  width: 0;  
+  height: 2px;  
+  background-color: #fff;  
+  transition: width 0.3s;  
+}  
 
-    nav a::after {
-      content: "";
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: #fff;
-      transition: width 0.3s;
-    }
+nav a:hover::after,  
+nav a.active::after {  
+  width: 100%;  
+}  
 
-    nav a:hover::after,
-    nav a.active::after {
-      width: 100%;
-    }
+.hero {  
+  display: flex;  
+  flex-direction: column;  
+  align-items: center;  
+  justify-content: center;  
+  min-height: 80vh;  
+  text-align: center;  
+  padding: 40px 20px;  
+  background: rgba(0, 0, 0, 0.35);  
+  backdrop-filter: blur(6px);  
+  border-radius: 20px;  
+  width: 90%;  
+  margin: 50px auto;  
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);  
+}  
 
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 80vh;
-      text-align: center;
-      padding: 40px 20px;
-      background: rgba(0, 0, 0, 0.35);
-      backdrop-filter: blur(6px);
-      border-radius: 20px;
-      width: 90%;
-      margin: 50px auto;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    }
+.hero h2 {  
+  font-size: 2.5rem;  
+  margin-bottom: 15px;  
+  font-weight: 700;  
+}  
 
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-      font-weight: 700;
-    }
+.hero p {  
+  font-size: 1.2rem;  
+  max-width: 600px;  
+}  
 
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-    }
+.contact {  
+  background: rgba(255, 255, 255, 0.15);  
+  width: 90%;  
+  margin: 60px auto;  
+  padding: 40px 20px;  
+  border-radius: 20px;  
+  text-align: center;  
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);  
+}  
 
-    .contact {
-      background: rgba(255, 255, 255, 0.15);
-      width: 90%;
-      margin: 60px auto;
-      padding: 40px 20px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    }
+.contact h2 {  
+  font-size: 2rem;  
+  margin-bottom: 10px;  
+}  
 
-    .contact h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
+.contact p {  
+  margin-bottom: 15px;  
+  font-size: 1rem;  
+}  
 
-    .contact p {
-      margin-bottom: 15px;
-      font-size: 1rem;
-    }
+.email-link {  
+  display: inline-block;  
+  padding: 12px 24px;  
+  background-color: #ffffff;  
+  color: #006b3c;  
+  border-radius: 25px;  
+  text-decoration: none;  
+  font-weight: bold;  
+  transition: all 0.3s;  
+}  
 
-    .email-link {
-      display: inline-block;
-      padding: 12px 24px;
-      background-color: #ffffff;
-      color: #006b3c;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s;
-    }
+.email-link:hover {  
+  background-color: #006b3c;  
+  color: #fff;  
+  transform: scale(1.05);  
+}  
 
-    .email-link:hover {
-      background-color: #006b3c;
-      color: #fff;
-      transform: scale(1.05);
-    }
+footer {  
+  background-color: #00331b;  
+  text-align: center;  
+  padding: 20px 10px;  
+  font-size: 0.95rem;  
+  margin-top: 50px;  
+  color: #d1d1d1;  
+  border-top: 2px solid rgba(255, 255, 255, 0.1);  
+}  
 
-    footer {
-      background-color: #00331b;
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 0.95rem;
-      margin-top: 50px;
-      color: #d1d1d1;
-      border-top: 2px solid rgba(255, 255, 255, 0.1);
-    }
+.socials {  
+  display: flex;  
+  justify-content: center;  
+  gap: 15px;  
+}  
 
-    .socials {
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-    }
+.socials a {  
+  color: #fff;  
+  font-size: 1.3rem;  
+  text-decoration: none;  
+  transition: 0.3s;  
+}  
 
-    .socials a {
-      color: #fff;
-      font-size: 1.3rem;
-      text-decoration: none;
-      transition: 0.3s;
-    }
+.socials a:hover {  
+  color: #00ffae;  
+  transform: scale(1.1);  
+}  
 
-    .socials a:hover {
-      color: #00ffae;
-      transform: scale(1.1);
-    }
+@media (max-width: 768px) {  
+  header .container {  
+    flex-direction: column;  
+    text-align: center;  
+  }  
 
-    #closedMessage {
-      display: none;
-      background: rgba(0, 0, 0, 0.7);
-      color: #fff;
-      text-align: center;
-      padding: 50px 20px;
-      font-size: 1.3rem;
-      border-radius: 15px;
-      margin: 60px auto;
-      width: 90%;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    }
+  nav ul {  
+    flex-direction: column;  
+    gap: 10px;  
+    margin-top: 10px;  
+  }  
 
-    /* 403 page style */
-    #forbiddenBox {
-      display: none;
-      text-align: center;
-      padding: 80px 20px;
-    }
+  .hero h2 {  
+    font-size: 2rem;  
+  }  
 
-    #forbiddenBox h1 {
-      font-size: 3rem;
-      margin-bottom: 15px;
-    }
+  .contact h2 {  
+    font-size: 1.5rem;  
+  }  
+}  
 
-    #forbiddenBox p {
-      font-size: 1.3rem;
-      opacity: 0.9;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="container">
-      <h1>Private Driver no Hassan</h1>
-      <nav>
-        <ul>
-          <li><a href="#home" class="active">Home</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+/* CLOSED MESSAGE */  
+#closedMessage {  
+  display: none;  
+  background: rgba(0, 0, 0, 0.7);  
+  color: #fff;  
+  text-align: center;  
+  padding: 50px 20px;  
+  font-size: 1.3rem;  
+  border-radius: 15px;  
+  margin: 60px auto;  
+  width: 90%;  
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);  
+}
 
-  <main id="mainContent">
-    <section id="home" class="hero">
-      <h2>Welcome to Private Driver no Hassan</h2>
-      <p>Experience premium chauffeur services across Norway.<br>
-      Reliable, comfortable, and professional — always on time.</p>
-    </section>
+  </style>  
+</head>  
+<body>  
+  <header>  
+    <div class="container">  
+      <h1>Private Driver no Hassan</h1>  
+      <nav>  
+        <ul>  
+          <li><a href="#home" class="active">Home</a></li>  
+          <li><a href="#contact">Contact</a></li>  
+        </ul>  
+      </nav>  
+    </div>  
+  </header>    <main id="mainContent">  
+    <section id="home" class="hero">  
+      <h2>Welcome to Private Driver no Hassan</h2>  
+      <p>Experience premium chauffeur services across Norway.<br>  
+      Reliable, comfortable, and professional — always on time.</p>  
+    </section>  <section id="contact" class="contact">  
+  <h2>Contact Us</h2>  
+  <p>For bookings or inquiries, email us at:</p>  
+  <a href="mailto:guestdeleteprocess@gmail.com" class="email-link" id="emailLink">  
+    guestdeleteprocess@gmail.com  
+  </a>  
+</section>
 
-    <section id="contact" class="contact">
-      <h2>Contact Us</h2>
-      <p>For bookings or inquiries, email us at:</p>
-      <a href="mailto:guestdeleteprocess@gmail.com" class="email-link" id="emailLink">
-        guestdeleteprocess@gmail.com
-      </a>
-    </section>
-  </main>
-
-  <div id="closedMessage">
-    <h2>Service Closed</h2>
-    <p>We’re currently closed. Our working hours are 5:00 AM to 11:00 PM (Norway Time).</p>
-  </div>
-
-  <!-- 403 Forbidden Page -->
-  <div id="forbiddenBox">
-    <h1>403 Forbidden</h1>
-    <p>Access to this website is currently restricted.</p>
-    <p>The owner has temporarily blocked access.</p>
-  </div>
-
-  <footer>
-    <div class="socials">
-      <a href="#"><span>🌐</span></a>
-      <a href="#"><span>📞</span></a>
-      <a href="#"><span>✉️</span></a>
-    </div>
-    <p>© 2025 Private Driver no Hassan | All rights reserved.</p>
-  </footer>
-
-  <script>
-    // 🔥 FORCE 403 FORBIDDEN MODE
-    document.getElementById("mainContent").style.display = "none";
-    document.getElementById("closedMessage").style.display = "none";
-    document.getElementById("forbiddenBox").style.display = "block";
-  </script>
-
-</body>
+  </main>    <div id="closedMessage">  
+    <h2>Service Closed</h2>  
+    <p>We’re currently closed. Our working hours are 5:00 AM to 11:00 PM (Norway Time).</p>  
+  </div>    <footer>  
+    <div class="socials">  
+      <a href="#"><span>🌐</span></a>  
+      <a href="#"><span>📞</span></a>  
+      <a href="#"><span>✉️</span></a>  
+    </div>  
+    <p>© 2025 Private Driver no Hassan | All rights reserved.</p>  
+  </footer>    <script>  
+    // Highlight menu links  
+    const links = document.querySelectorAll("nav a");  
+    links.forEach(link => {  
+      link.addEventListener("click", () => {  
+        links.forEach(l => l.classList.remove("active"));  
+        link.classList.add("active");  
+      });  
+    });  
+  
+    // Norway time restriction  
+    function checkNorwayTime() {  
+      const now = new Date();  
+      const options = { timeZone: 'Europe/Oslo', hour12: false, hour: '2-digit', minute: '2-digit' };  
+      const timeString = new Intl.DateTimeFormat('en-GB', options).format(now);  
+      const hour = parseInt(timeString.split(':')[0]);  
+  
+      const mainContent = document.getElementById('mainContent');  
+      const closedMessage = document.getElementById('closedMessage');  
+      const emailLink = document.getElementById('emailLink');  
+  
+      if (hour >= 5 && hour < 23) {  
+        mainContent.style.display = 'block';  
+        closedMessage.style.display = 'none';  
+        emailLink.classList.remove('disabled');  
+        emailLink.style.pointerEvents = 'auto';  
+        emailLink.style.opacity = '1';  
+      } else {  
+        mainContent.style.display = 'none';  
+        closedMessage.style.display = 'block';  
+        emailLink.classList.add('disabled');  
+        emailLink.style.pointerEvents = 'none';  
+        emailLink.style.opacity = '0.5';  
+      }  
+    }  
+  
+    checkNorwayTime();  
+    setInterval(checkNorwayTime, 60000); // check every minute  
+  </script>  </body>  
 </html>
